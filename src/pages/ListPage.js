@@ -28,6 +28,7 @@ class ListPage extends React.Component {
         this.fetchMoreData();
     }
 
+    /* function used to loadmore data on scroll form the api*/
     fetchMoreData = () => {
         this.props.getListData(`CONTENTLISTINGPAGE-PAGE${this.state.page}.json`);
         this.setState((prevState) => {
@@ -47,6 +48,8 @@ class ListPage extends React.Component {
         }
         if (contentData && contentData.length) {
             let hasMore = true;
+            
+            /*checking if maximum data length reached then do not load more*/
             if ((content.listData.length >= parseInt(content.totalItems)) || searchStatus) {
                 hasMore = false;
             }
