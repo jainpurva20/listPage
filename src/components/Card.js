@@ -1,5 +1,6 @@
 import React from 'react';
 
+/* using react memo to memorising the result */
 const Card = React.memo((props) => {
    return (
       <div className="w-full xs:w-1/3 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-15px ">
