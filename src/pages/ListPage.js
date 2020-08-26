@@ -40,8 +40,9 @@ class ListPage extends React.Component {
 
     render() {
         const {content, searchData, searchStatus} = this.state;
-        var contentData = "";
+        var contentData = "", message = "Loading....";
         if(searchStatus){
+            message = "No Data Found......!!!";
             contentData = searchData.searchList;
         } else {
             contentData = content && content.listData;
@@ -65,7 +66,7 @@ class ListPage extends React.Component {
                 </InfiniteScroll>)
         }
         return (
-            <div className="text-white text-center p-10 font-bold">No Data Found......</div>
+        <div className="text-white text-center p-10 font-bold">{message}</div>
         )
     }
 }
