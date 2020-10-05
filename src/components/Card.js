@@ -10,7 +10,7 @@ const Card = React.memo((props) => {
                   event.target.src = "/images/loading.jpg"
                }} />
             <div>
-               <p className="text-white text-base bg-transparent font-titillium font-thin truncate">
+               <p className="text-black text-base bg-transparent font-titillium font-thin truncate">
                   {props.data['name']}
                </p>
             </div>

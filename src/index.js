@@ -16,7 +16,7 @@ const store = createStore(rootReducer,
     loggerMiddleware
   ))
 
-ReactDOM.render(
+ReactDOM.hydrate(
     <Provider store={store}>
       <App />
     </Provider>,
