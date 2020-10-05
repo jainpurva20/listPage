@@ -1,13 +1,20 @@
 {
+  "homepage": "https://jainpurva20.github.io/listPage/",
   "name": "diagnal_workshop_model",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/register": "^7.11.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "autoprefixer": "^9.8.6",
     "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "ignore-styles": "^5.0.1",
     "postcss-cli": "^7.1.1",
     "postcss-import": "^12.0.1",
     "react": "^16.13.1",
@@ -19,14 +26,18 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "register": "0.0.0",
     "tailwindcss": "^1.7.3"
   },
   "scripts": {
-    "start": "npm run build:style && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "start": "node server/index.js",
+    "build": "npm run build:style && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:style": "tailwind build src/styles/tailwind.css -o src/styles/app.css"
+    "build:style": "tailwind build src/styles/tailwind.css -o src/styles/app.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "ssr": "node server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
